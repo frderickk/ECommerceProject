@@ -30,7 +30,7 @@ DJANGO_APPS = [
 ]
 
 PROJECT_APPS = [
-
+    'apps.user',
 ]
 
 ECOMMERCE_APPS = [
@@ -123,7 +123,7 @@ CSRF_TRUSTED_ORIGINS = [
 PASSWORD_HASHERS = [
     "django.contrib.auth.hashers.Argon2PasswordHasher",
     "django.contrib.auth.hashers.PBKDF2PasswordHasher",
-    "django.contrib.auth.hashers.PBKDF2SHAIPasswordHasher",
+    "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher",
     "django.contrib.auth.hashers.BCryptSHA256PasswordHasher",
 ]
 
@@ -187,6 +187,8 @@ AUTHENTICATION_BACKENDS = {
     'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 }
+
+AUTH_USER_MODEL = "user.UserAccount"
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
